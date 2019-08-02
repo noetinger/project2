@@ -1,9 +1,8 @@
-// TESTING
-
 // Get references to page elements
 //buttons
 var $searchBtn = $("#searchBtn");
 var $newBeerbtn = $("#newBeerbtn");
+var $returnPage = $("#returnPage")
 //search term
 var searchTerm = $("#searchTerm");
 // new beer entry
@@ -61,8 +60,8 @@ var handleFormSubmit = function(event) {
     when: $newWhen.val().trim(),
   };
 
-  if (!(newBeer.beerName && newBeer.breweryName && newBeer.addressOne && newBeer.addressTwo 
-    && newBeer.city && newBeer.state && newBeer.zip && newBeer.type && newBeer.abv && newBeer.where && newBeer.when)) {
+  if (!(newBeer.beerName && newBeer.breweryName && newBeer.addressOne && newBeer.city 
+  && newBeer.state && newBeer.zip && newBeer.type && newBeer.abv && newBeer.where && newBeer.when)) {
     alert("You must enter all fields to add a new beer!");
     return;
   }
@@ -117,10 +116,18 @@ var searchBeer = function(searchTerm) {
   });
 
   $searchTerm.val("");
+  $returnPage.show;
+
+}
+
+function reload(){
+  location.reload(); 
+  $returnPage.hide; 
 }
 
 // Add event listeners to the search and add beer buttons
 $newBeerbtn.on("click", handleFormSubmit);
 $searchBtn.on("click", searchBeer);
+$returnPage.on("click", reload);
 
 
