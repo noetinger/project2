@@ -59,6 +59,8 @@ var handleFormSubmit = function(event) {
     where: $newWhere.val().trim(),
     when: $newWhen.val().trim(),
   };
+  console.log("in handleFormSubmit function");
+  console.log("new beer information: "+newBeer)
 
   if (!(newBeer.beerName && newBeer.breweryName && newBeer.addressOne && newBeer.city 
   && newBeer.state && newBeer.zip && newBeer.type && newBeer.abv && newBeer.where && newBeer.when)) {
@@ -88,6 +90,8 @@ var handleFormSubmit = function(event) {
 
 var searchBeer = function(searchTerm) {
   event.preventDefault();
+  console.log("In searchBeer function");
+  console.log(searchTerm);
   API.getBeer(searchTerm).then(function() {
     function displayBeers(result){
       var html = "<h1>Results</h1>";
