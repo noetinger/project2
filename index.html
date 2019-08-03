@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../project2/public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <title>Crafty Drafter</title>
+
+  
+</head>
+
+<body>
+  
+    <div id="bg">
+        <img src="beerbg.jpg" class="beer" alt="background">
+    </div>
+
+
+<div id="home">
+        
+    <div class="container main-stuff">
+        <img class="logo" src="logomain.png">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <h1>{{msg}}</h1>
+          <h2>This is our Home Page!</h2>
+          <form class="clearfix mb-4" action="POST">
+            <div class="form-group">
+              <label for="example-text">Example Text</label>
+              <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            </div>
+            <div class="form-group">
+              <label for="example-description">Example Description</label>
+              <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+            </div>
+            <button id="submit" class="btn btn-primary float-right">Submit</button>
+          </form>
+          <h3>Examples:</h3>
+          <ul id="example-list" class="list-group">
+            {{#each examples}}
+            <li data-id="{{this.id}}" class="list-group-item">
+              <a href="example/{{this.id}}">{{this.text}}</a>
+              <button class="btn btn-danger float-right delete">ｘ</button>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</div> 
+<!-- container div closing -->
+
+
+
+<div class="footer">
+        <div id="button"></div>
+      <div id="container">
+      <div id="cont">
+      <div class="footer_center">
+             <p><a href="https://www.google.com/" target="_blank">Alicia</a></p>
+             <p><a href="https://www.google.com/" target="_blank">Jenny</a></p>
+      </div>
+      </div>
+      </div>
+      </div>
+</body>
+</html>
