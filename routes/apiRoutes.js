@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Get all examples
   app.get("/api/beers", function(req, res) {
     db.Beer.findAll({}).then(function(dbBeer) {
+      console.log("Name of Beer!")
       res.json(dbBeer);
     });
   });
@@ -31,6 +32,7 @@ app.get("/api/beers/breweryName/:breweryName", function (req, res) {
     })
   })
   .then(function (dbBeer) {
+    console.log("Brewery Name is here")
     res.json(dbBeer);
   })
 
@@ -45,6 +47,7 @@ app.get("/api/beers/abv/:abv", function (req, res) {
     })
   })
   .then(function (dbBeer) {
+    console.log("Percentage is here")
     res.json(dbBeer);
   })
 
