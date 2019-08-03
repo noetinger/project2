@@ -127,3 +127,7 @@ height:100%;
 	margin-left:40px;
 }
 /* footer */
+
+body {
+  background-image: url("/public/images/beerbg.jpg");
+}
