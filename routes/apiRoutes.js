@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   //Get route for returning post of the specific type of beer//
-  app.get("/api/beer/type/:type", function(req,res){
+  app.get("/api/beers/type/:type", function(req,res){
     db.Beer.findAll({
       where: {
         type: req.params.type
@@ -17,6 +17,7 @@ module.exports = function(app) {
     })
   })
   .then(function(dbBeer){
+  console.log("beer type is here");
     res.json(dbBeer);
   })
 
@@ -47,11 +48,12 @@ app.get("/api/beers/abv/:abv", function (req, res) {
     res.json(dbBeer);
   })
 
-  // Create a new example
-  //app.post("/api/beer", function(req, res) {
-    //db.Beer.create(req.body).then(function(dbBeer) {
-      //res.json(dbBeer);
-   // });
+  // Create a new beer
+  //app.post("/api/addbeer", function(req, res) {
+    //db.Beer.create({(
+      //beerName:req.body.beerName,
+      
+    //}).then(function());
   //});
 
   // Delete an example by id
