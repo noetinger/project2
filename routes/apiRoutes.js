@@ -18,9 +18,9 @@ module.exports = function (app) {
         type: req.params.type
       }
     }).then(function (dbBeer) {
-
+      console.log("Type of beer is here!")
       res.json(dbBeer);
-      console.log(dbBeer)
+      
     })
   })
 
