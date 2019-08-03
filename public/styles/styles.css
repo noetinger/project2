@@ -1,44 +1,59 @@
-
-/* boilerplate */
-.list-group-item {
-  line-height: 2.5;
+/* background image*/
+body, html {
+  height: 100%;
 }
 
+.bg { 
+  /* The image used */
+  background-image: url("beerbg.jpg");
 
-/* background */
-/* body {
-  background-image: url("public/bg.jpeg");
-  background-color: #3A3A3A;
- } */
- html { 
-  background: url(public/bg.jpeg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
- 
+/* background image */
 
 
-/* background */
+/* main-content */
 
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 280px;
+}
+
+.beer { 
+  position: relative; 
+  width: 100%; /* for IE 6 */
+ }   
+
+.main-stuff { 
+  position: absolute; 
+  top: 7%; 
+  left: 5%; 
+  width: 90%; 
+  height: 850px; /*suggestion?*/
+  color:black;
+  background-color: white;
+  border: 5px solid #999999;
+}  
+
+/* main-content */
 
 
 /* footer */
-/* @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
-body{
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight:300;
-  background-color:lightblue;
-  color:#FFF;
-}
-section{
-  text-align:center;
-}
+
 .footer #button{
 	width:35px;
-	height:35px;
-	border: #727172 12px solid;
+	height:40px;
+	border: #993333 10px solid;
 	border-radius:35px;
 	margin:0 auto;
 	position:relative;
@@ -51,7 +66,7 @@ section{
 .footer #button:hover{
 	width:35px;
 	height:35px;
-	border: #3A3A3A 12px solid;
+	border: rgb(139, 16, 16) 12px solid;
 	-webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
@@ -104,11 +119,15 @@ height:100%;
 	float:left;
   text-align:center;
 }
-.footer h3{
+.footer p{
 	font-family: 'Helvetica';
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: 100;
 	margin-top:70px;
 	margin-left:40px;
-} */
+}
 /* footer */
+
+body {
+  background-image: url("/public/images/beerbg.jpg");
+}
