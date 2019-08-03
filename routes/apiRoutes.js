@@ -18,12 +18,12 @@ module.exports = function (app) {
         type: req.params.type
       }
     }).then(function (dbBeer) {
-      console.log("Type of Beer!");
+
       res.json(dbBeer);
+      console.log(dbBeer)
     })
   })
 
-  
 
 
   //Get route to searching by Brewery Name//
@@ -56,10 +56,10 @@ module.exports = function (app) {
 
   // Create a new beer
   //app.post("/api/addbeer", function(req, res) {
-    //db.Beer.create({(
-      //beerName:req.body.beerName,
-      
-    //}).then(function());
+  //db.Beer.create({(
+  //beerName:req.body.beerName,
+
+  //}).then(function());
 
   // Create a new example
   //app.post("/api/beer", function(req, res) {

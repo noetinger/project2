@@ -3,9 +3,7 @@
 var $searchBtn = $("#searchBtn");
 var $newBeerbtn = $("#newBeerbtn");
 var $returnPage = $("#returnPage")
-//search term
-var searchTerm = $("#searchTerm");
-// new beer entry
+
 var $newBeer = $("#newBeer");
 var $newBrewery = $("#newBrewery");
 var $addressOne = $("#newAddy1");
@@ -31,9 +29,9 @@ var API = {
       data: JSON.stringify(newBeer)
     });
   },
-  getBeer: function() {
+  getBeer: function(searchedBeer) {
     return $.ajax({
-      url: "api/beer",
+      url: "/api/type/"+searchedBeer,
       type: "GET"
     });
   },
@@ -88,38 +86,40 @@ var handleFormSubmit = function(event) {
 
 };
 
-var searchBeer = function(searchTerm) {
+var searchBeer = function() {
   event.preventDefault();
+  searchedBeer = $('#searchTerm').val().trim();
   console.log("In searchBeer function");
-  console.log(searchTerm);
-  API.getBeer(searchTerm).then(function() {
+  console.log(searchedBeer);
+  API.getBeer(searchedBeer).then(function() {
     function displayBeers(result){
       var html = "<h1>Results</h1>";
 
-    html += "<ul>";
+      html += "<ul>";
 
-    for (var i = 0; i < result.length; i++) {
-      html += "<li><p> Name: " + result[i].beerName + "</p>";
-      html += "<p> Brewery: " + result[i].breweryName + "</p>";
-      html += "<p>" + result[i].addressOne + "</p>";
-      html += "<p>" + result[i].addressTwo + "</p>";
-      html += "<p>" + result[i].city + "</p>";
-      html += "<p>" + result[i].state + "</p>";
-      html += "<p>" + result[i].zip + "</p>";
-      html += "<p> Type: " + result[i].type + "</p>";
-      html += "<p> ABV: " + result[i].abv + "</p>";
-      html += "<p> Where to purchase: " + result[i].where + "</p>";
-      html += "<p> When is it available: " + result[i].when + "</p></li>";
+      for (var i = 0; i < result.length; i++) {
+        html += "<li><p> Name: " + result[i].beerName + "</p>";
+        html += "<p> Brewery: " + result[i].breweryName + "</p>";
+        html += "<p>" + result[i].addressOne + "</p>";
+        html += "<p>" + result[i].addressTwo + "</p>";
+        html += "<p>" + result[i].city + "</p>";
+        html += "<p>" + result[i].state + "</p>";
+        html += "<p>" + result[i].zip + "</p>";
+        html += "<p> Type: " + result[i].type + "</p>";
+        html += "<p> ABV: " + result[i].abv + "</p>";
+        html += "<p> Where to purchase: " + result[i].where + "</p>";
+        html += "<p> When is it available: " + result[i].when + "</p></li>";
+      }
+
+      html += "</ul>";
+
+      res.send(html);
     }
-
-    html += "</ul>";
-
-    res.send(html);
-    }
+    displayBeers();
       
   });
 
-  $searchTerm.val("");
+  // searchTermBox.val("");
   $returnPage.show;
 
 }
