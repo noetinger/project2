@@ -5,7 +5,6 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Beer.findAll({}).then(function(beerList) {
       res.render("index", {
-        // msg: "Welcome to Crafty Drafter!",
         beers: beerList
       });
     });

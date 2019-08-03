@@ -24,10 +24,10 @@ module.exports = function (app) {
 
 
   //Get route to searching by Brewery Name//
-  app.get("/api/beers/breweryName/:breweryName", function (req, res) {
+  app.get("/api/breweryname/:breweryname", function (req, res) {
     db.Beer.findAll({
       where: {
-        breweryName: req.params.breweryName
+        breweryName: req.params.breweryname
       }
     }).then(function (dbBeer) {
       res.json(dbBeer);
@@ -38,7 +38,7 @@ module.exports = function (app) {
 
 
   //Get route for returning post of the specific type of beer//
-  app.get("/api/beers/abv/:abv", function (req, res) {
+  app.get("/api/abv/:abv", function (req, res) {
     db.Beer.findAll({
       where: {
         abv: req.params.abv
