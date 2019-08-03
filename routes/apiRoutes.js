@@ -2,8 +2,9 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
-  app.get("/api/beers", function (req, res) {
-    db.Beer.findAll({}).then(function (dbBeer) {
+  app.get("/api/beers", function(req, res) {
+    db.Beer.findAll({}).then(function(dbBeer) {
+      console.log("Name of Beer!")
       res.json(dbBeer);
     });
   });
@@ -11,43 +12,47 @@ module.exports = function (app) {
   //Get route for returning post of the specific type of beer//
 
   app.get("/api/type/:type", function (req, res) {
+
     db.Beer.findAll({
       where: {
         type: req.params.type
       }
     }).then(function (dbBeer) {
-      console.log("beer type is here");
+
       res.json(dbBeer);
       console.log(dbBeer)
     })
   })
 
 
+
   //Get route to searching by Brewery Name//
-  app.get("/api/beers/breweryName/:breweryName", function (req, res) {
+  app.get("/api/breweryname/:breweryname", function (req, res) {
     db.Beer.findAll({
       where: {
-        breweryName: req.params.breweryName
+        breweryName: req.params.breweryname
       }
     }).then(function (dbBeer) {
+      console.log("Name of Brewery is here!");
       res.json(dbBeer);
     })
   })
-
+  
 
 
 
   //Get route for returning post of the specific type of beer//
-  app.get("/api/beers/abv/:abv", function (req, res) {
+  app.get("/api/abv/:abv", function (req, res) {
     db.Beer.findAll({
       where: {
         abv: req.params.abv
       }
     }).then(function (dbBeer) {
+      console.log("Percentage of beer is here!");
       res.json(dbBeer);
     })
   })
-
+  
 
   // Create a new beer
   //app.post("/api/addbeer", function(req, res) {
