@@ -28,62 +28,58 @@ var API = {
 
 // handleFormSubmit is called whenever we submit a new beer
 // Save the new beer to the db and refresh the page
-// var handleFormSubmit = function(event) {
-//   event.preventDefault();
+var handleFormSubmit = function(event) {
+  event.preventDefault();
 
-//   var newBeer = $("#newBeer").val().trim();
-//   var newBrewery = $("#newBrewery").val().trim();
-//   var addressOne = $("#newAddy1").val().trim();
-//   var addressTwo = $("#newAddy2").val().trim();
-//   var newCity = $("#newcity").val().trim();
-//   var newState = $("#newState").val().trim();
-//   var newZip = $("#newZip").val().trim();
-//   var newType = $("#newType").val().trim();
-//   var newAbv = $("#newAbv").val().trim();
-//   var newWhere = $("#newWhere").val().trim();
-//   var newWhen = $("#newWhen").val().trim();
+  var newBeer = $("#newBeer").val().trim();
+  var newBrewery = $("#newBrewery").val().trim();
+  // var addressOne = $("#newAddy1").val().trim();
+  // var addressTwo = $("#newAddy2").val().trim();
+  // var newCity = $("#newcity").val().trim();
+  // var newState = $("#newState").val().trim();
+  // var newZip = $("#newZip").val().trim();
+  var newType = $("#newType").val().trim();
+  var newAbv = $("#newAbv").val().trim();
+  var newWhere = $("#newWhere").val().trim();
+  var newWhen = $("#newWhen").val().trim();
+  
 
-//   var newBeer = {
-//     beerName: newBeer,
-//     breweryName: newBrewery,
-//     addressOne: addressOne,
-//     addressTwo: addressTwo,
-//     city: newCity,
-//     state: newState,
-//     zip: newZip,
-//     type: newType,
-//     abv: newAbv,
-//     where: newWhere,
-//     when: newWhen,
-//   };
+  var newBeer = {
+    beerName: newBeer,
+    breweryName: newBrewery,
+    // addressOne: addressOne,
+    // addressTwo: addressTwo,
+    // city: newCity,
+    // state: newState,
+    // zip: newZip,
+    type: newType,
+    abv: newAbv,
+    where: newWhere,
+    when: newWhen,
+  };
 
-//   console.log("in handleFormSubmit function");
-//   console.log("new beer information: "+newBeer);
-//   if (!(newBeer.beerName && newBeer.breweryName && newBeer.addressOne && newBeer.city 
-//   && newBeer.state && newBeer.zip && newBeer.type && newBeer.abv && newBeer.where && newBeer.when)) {
-//     alert("You must enter all fields to add a new beer!");
-//     return;
-//   }
+  console.log("in handleFormSubmit function");
+  console.log("new beer information: "+ JSON.stringify(newBeer));
 
-//   API.addBeer(newBeer).then(function() {
-//     alert("Thank you for adding to the Craft Beers list! It is now available for future searches.");
-//     //reload the page
-//     location.reload();
-//   });
+  API.addBeer(newBeer).then(function() {
+    alert("Thank you for adding to the Craft Beers list! It is now available for future searches.");
+    //reload the page
+    location.reload();
+  });
 
-//   $newBeer.val("");
-//   $newBrewery.val("");
-//   $addressOne.val("");
-//   $addressTwo.val("");
-//   $city.val("");
-//   $newState.val("");
-//   $newZip.val("");
-//   $newType.val("");
-//   $newAbv.val("");
-//   $where.val("");
-//   $when.val("");
+  $("#newBeer").val('');
+  // $newBrewery.val("");
+  // $addressOne.val("");
+  // $addressTwo.val("");
+  // $city.val("");
+  // $newState.val("");
+  // $newZip.val("");
+  //$newType.val("");
+  $("#newAbv").val('');
+  // $where.val("");
+  // $when.val("");
 
-// };
+};
 
 var searchBeer = function () {
   event.preventDefault();
@@ -130,10 +126,6 @@ function reload() {
   $returnPage.hide;
 }
 
-// Add event listeners to the search and add beer buttons
-//$newBeerbtn.on("click", handleFormSubmit);
-$searchBtn.on("click", searchBeer);
-$returnPage.on("click", reload);
 
 $("#typeofSearch").change(function () {
   var selected = $("#typeofSearch");
@@ -152,3 +144,20 @@ $("#typeofSearch").change(function () {
     $("#searchBtn").prop("disabled", true);
   }
 });
+
+$("#addBeerForm").change(function(){
+console.log("in addBeerForm.change() - checking for complete form");
+  if ((!($("#newBeer").val() === "")
+    && !($("#newBrewery").val() === "")
+    && !($("#newType").val() === "")
+    && !($("#newABV").val() === "")
+    && !($("#newWhere").val() === "")
+    && !($("#newWhen").val() === ""))) {
+      $("#newBeerbtn").prop("disabled", false)      
+    }
+  });
+
+// Add event listeners to the search and add beer buttons
+$newBeerbtn.on("click", handleFormSubmit);
+$searchBtn.on("click", searchBeer);
+$returnPage.on("click", reload);

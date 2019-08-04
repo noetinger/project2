@@ -51,7 +51,7 @@
               <button id="searchBtn" class="btn btn-primary float-right" disabled="true" >Submit</button>
             </div>
           </form>
-          <form>
+          <form id="addBeerForm"> 
             <h3>Add to the CLT Craft Beer Collection</h3>
             <div class="form-group">
               <label for="newBeerInfo">Name of Beer</label>
@@ -98,14 +98,24 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="newBeerInfo">ABV</label>
-              <input type="text" class="form-control" id="newABV" placeholder="7%">
+              <label for="newBeerInfo">ABV %</label>
+              <input type="number" class="form-control" id="newAbv" placeholder="Enter numbers only">
             </div>
             <div class="form-group">
               <label for="newWhere">Where to Purchase</label>
-              <select id="newWhere" style="display: block">
+              <select id="newWhere">
                 <option value="At Brewery">At Brewery</option>
                 <option value="Local Grocery Stores">Local Grocery Stores</option>
+              </select>
+            </div>  
+            <div class="form-group">
+              <label for="newWhen">When is it available for purchase?</label>
+              <select id="newWhen">
+                <option value="Year Round">Year Round</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+                <option value="Winter">Winter</option>                
               </select>
             </div>  
             <button id="newBeerbtn" class="btn btn-primary float-right" disabled="true" >Submit</button>
