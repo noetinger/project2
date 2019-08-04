@@ -7,6 +7,7 @@
           <h1>Welcome to Crafty Drafter!</h1>
           {{!-- <h2>This is our Home Page!</h2> --}}
           <form class="clearfix mb-4" action="POST">
+            <h3>Find a Beer</h3>
             <div class="form-group">
               <select id="typeofSearch">
                 <option value="default">-Select-</option>
@@ -48,16 +49,78 @@
                 <option value="Wooden Robot Brewery">Wheat Beer</option>
               </select>
               <button id="searchBtn" class="btn btn-primary float-right" disabled="true" >Submit</button>
+            </div>
           </form>
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
-          </ul>
+          <form>
+            <h3>Add to the CLT Craft Beer Collection</h3>
+            <div class="form-group">
+              <label for="newBeerInfo">Name of Beer</label>
+              <input type="text" class="form-control" id="newBeer" placeholder="Your new favorite CLT beer!">
+            </div>
+            <div class="form-group">  
+              <label for="newBrewery">Brewery of Origin</label>
+              <select id="newBrewery" style="display: block">
+                <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
+                <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
+                <option value="Free Range">Free Range</option>
+                <option value="Heist">Heist</option>  
+                <option value="Legion Brewing">Legion Brewing</option>                              
+                <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
+                <option value="NoDa">NoDa</option>
+                <option value="OMB">OMB</option>
+                <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
+                <option value="Salud Cerveceria">Salud Cerveceria</option>
+                <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
+                <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
+                <option value="The Unknown Brewing">The Unknown Brewing</option>
+                <option value="Triple C">Triple C</option>
+                <option value="Wooden Robot Brewery">Wheat Beer</option>
+              </select>
+            </div> 
+            <div class="form-group"> 
+              <label for="newType">Type of Beer</label>
+              <select id="newType" style="display: block">
+                <option value="Ale">Ale</option>
+                <option value="Amber Ale">Amber Ale</option>
+                <option value="Blonde Ale">Blonde Ale</option>
+                <option value="Bock">Bock</option>  
+                <option value="Brown Ale">Brown Ale</option>                              
+                <option value="Cider">Cider</option>
+                <option value="IPA">IPA</option>
+                <option value="Lager">Lager</option>
+                <option value="Pale Ale">Pale Ale</option>
+                <option value="Pilsner">Pilsner</option>
+                <option value="Porter">Porter</option>
+                <option value="Saison">Saison</option>
+                <option value="Sour">Sour</option>
+                <option value="Stout">Stout</option>
+                <option value="Wheat Beer">Wheat Beer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="newBeerInfo">ABV</label>
+              <input type="text" class="form-control" id="newABV" placeholder="7%">
+            </div>
+            <div class="form-group">
+              <label for="newWhere">Where to Purchase</label>
+              <select id="newWhere" style="display: block">
+                <option value="At Brewery">At Brewery</option>
+                <option value="Local Grocery Stores">Local Grocery Stores</option>
+              </select>
+            </div>  
+            <button id="newBeerbtn" class="btn btn-primary float-right" disabled="true" >Submit</button>
+          </form>
+          <div style="display: none">
+            <h3>Examples:</h3>
+            <ul id="example-list" class="list-group">
+              {{#each examples}}
+              <li data-id="{{this.id}}" class="list-group-item">
+                <a href="example/{{this.id}}">{{this.text}}</a>
+                <button class="btn btn-danger float-right delete">ｘ</button>
+              </li>
+              {{/each}}
+            </ul>
+          </div>  
         </div>
       </div>\
     </div>
