@@ -90,8 +90,8 @@ var searchBeer = function () {
   console.log("in searchBeer function");
   var typeOfSearch = $("#typeofSearch").val();
   var searchSpecific = $("#typeSelections").val();
-  console.log("type of search "+ typeOfSearch);
-  console.log("beer type or brew name " + searchSpecific);
+  console.log("type of search: "+ typeOfSearch);
+  console.log("beer type or brew name: " + searchSpecific);
   API.getBeer(typeOfSearch,searchSpecific).then(function () {
     function displayBeers(result) {
       var html = "<h1>Results</h1>";
