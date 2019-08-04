@@ -33,11 +33,11 @@ var handleFormSubmit = function(event) {
 
   var newBeer = $("#newBeer").val().trim();
   var newBrewery = $("#newBrewery").val().trim();
-  // var addressOne = $("#newAddy1").val().trim();
-  // var addressTwo = $("#newAddy2").val().trim();
-  // var newCity = $("#newcity").val().trim();
-  // var newState = $("#newState").val().trim();
-  // var newZip = $("#newZip").val().trim();
+  var addressOne = $("#newAddy1").val().trim();
+  var addressTwo = $("#newAddy2").val().trim();
+  var newCity = $("#newcity").val().trim();
+  var newState = $("#newState").val().trim();
+  var newZip = $("#newZip").val().trim();
   var newType = $("#newType").val().trim();
   var newAbv = $("#newAbv").val().trim();
   var newWhere = $("#newWhere").val().trim();
@@ -47,11 +47,11 @@ var handleFormSubmit = function(event) {
   var newBeer = {
     beerName: newBeer,
     breweryName: newBrewery,
-    // addressOne: addressOne,
-    // addressTwo: addressTwo,
-    // city: newCity,
-    // state: newState,
-    // zip: newZip,
+    addressOne: addressOne,
+    addressTwo: addressTwo,
+    city: newCity,
+    state: newState,
+    zip: newZip,
     type: newType,
     abv: newAbv,
     where: newWhere,
@@ -60,24 +60,24 @@ var handleFormSubmit = function(event) {
 
   console.log("in handleFormSubmit function");
   console.log("new beer information: "+ JSON.stringify(newBeer));
+  alert("Thank you for adding to the Craft Beers list! It is now available for future searches.");
 
   API.addBeer(newBeer).then(function() {
-    alert("Thank you for adding to the Craft Beers list! It is now available for future searches.");
     //reload the page
     location.reload();
   });
 
   $("#newBeer").val('');
-  // $newBrewery.val("");
-  // $addressOne.val("");
-  // $addressTwo.val("");
-  // $city.val("");
-  // $newState.val("");
-  // $newZip.val("");
-  //$newType.val("");
+  $("#newBrewery").val("");
+  $("#addressOne").val("");
+  $("#addressTwo").val("");
+  $("#city").val("");
+  $("#newState").val("");
+  $("#newZip").val("");
+  $("#newType").val("");
   $("#newAbv").val('');
-  // $where.val("");
-  // $when.val("");
+  $("#where").val("");
+  $("#when").val("");
 
 };
 
@@ -151,8 +151,12 @@ console.log("in addBeerForm.change() - checking for complete form");
     && !($("#newBrewery").val() === "")
     && !($("#newType").val() === "")
     && !($("#newABV").val() === "")
-    && !($("#newWhere").val() === "")
-    && !($("#newWhen").val() === ""))) {
+    && !($("#newAddy1").val() === "")
+    && !($("#newcity").val() === "")
+    && !($("#newState").val() === "")
+    && !($("#newZip").val() === "")
+    && !($("#newWhen").val() === "")
+    && !($("#newWhere").val() === ""))) {
       $("#newBeerbtn").prop("disabled", false)      
     }
   });
