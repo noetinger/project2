@@ -2,26 +2,11 @@
 //buttons
 var $searchBtn = $("#searchBtn");
 var $newBeerbtn = $("#newBeerbtn");
-var $returnPage = $("#returnPage")
-//search term
-var searchTerm = $("#searchTerm");
-// new beer entry
-var $newBeer = $("#newBeer");
-var $newBrewery = $("#newBrewery");
-var $addressOne = $("#newAddy1");
-var $addressTwo = $("#newAddy2");
-var $city = $("#newcity");
-var $newState = $("#newState");
-var $newZip = $("#newZip");
-var $newType = $("#newType");
-var $newAbv = $("#newAbv");
-var $where = $("#newWhere");
-var $when = ("#newWhen");
-
+var $returnPage = $("#returnPage");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  addBeer: function(newBeer) {
+  addBeer: function (newBeer) {
     return $.ajax({
       headers: {
         "Content-Type": "application/json"
@@ -31,9 +16,9 @@ var API = {
       data: JSON.stringify(newBeer)
     });
   },
-  getBeer: function() {
+  getBeer: function (searchedBeer) {
     return $.ajax({
-      url: "api/beer",
+      url: "/api/type/" + searchedBeer,
       type: "GET"
     });
   },
@@ -46,88 +31,137 @@ var API = {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
+  var newBeer = $("#newBeer").val().trim();
+  var newBrewery = $("#newBrewery").val().trim();
+  var addressOne = $("#newAddy1").val().trim();
+  var addressTwo = $("#newAddy2").val().trim();
+  var newCity = $("#newcity").val().trim();
+  var newState = $("#newState").val().trim();
+  var newZip = $("#newZip").val().trim();
+  var newType = $("#newType").val().trim();
+  var newAbv = $("#newAbv").val().trim();
+  var newWhere = $("#newWhere").val().trim();
+  var newWhen = $("#newWhen").val().trim();
+  
+
   var newBeer = {
-    beerName: $newBeer.val().trim(),
-    breweryName: $newBrewery.val().trim(),
-    addressOne: $newAddy1.val().trim(),
-    addressTwo: $newAddy2.val().trim(),
-    city: $newcity.val().trim(),
-    state: $newState.val().trim(),
-    zip: $newZip.val().trim(),
-    type: $newType.val().trim(),
-    abv: $newAbv.val().trim(),
-    where: $newWhere.val().trim(),
-    when: $newWhen.val().trim(),
+    beerName: newBeer,
+    breweryName: newBrewery,
+    addressOne: addressOne,
+    addressTwo: addressTwo,
+    city: newCity,
+    state: newState,
+    zip: newZip,
+    type: newType,
+    abv: newAbv,
+    where: newWhere,
+    when: newWhen,
   };
 
-  if (!(newBeer.beerName && newBeer.breweryName && newBeer.addressOne && newBeer.city 
-  && newBeer.state && newBeer.zip && newBeer.type && newBeer.abv && newBeer.where && newBeer.when)) {
-    alert("You must enter all fields to add a new beer!");
-    return;
-  }
+  console.log("in handleFormSubmit function");
+  console.log("new beer information: "+ JSON.stringify(newBeer));
+  alert("Thank you for adding to the Craft Beers list! It is now available for future searches.");
 
   API.addBeer(newBeer).then(function() {
-    alert("Thank you for adding to the Craft Beers list! It is now available for future searches.");
     //reload the page
     location.reload();
   });
 
-  $newBeer.val("");
-  $newBrewery.val("");
-  $addressOne.val("");
-  $addressTwo.val("");
-  $city.val("");
-  $newState.val("");
-  $newZip.val("");
-  $newType.val("");
-  $newAbv.val("");
-  $where.val("");
-  $when.val("");
+  $("#newBeer").val('');
+  $("#newBrewery").val("");
+  $("#addressOne").val("");
+  $("#addressTwo").val("");
+  $("#city").val("");
+  $("#newState").val("");
+  $("#newZip").val("");
+  $("#newType").val("");
+  $("#newAbv").val('');
+  $("#where").val("");
+  $("#when").val("");
 
 };
 
-var searchBeer = function(searchTerm) {
+var searchBeer = function () {
   event.preventDefault();
-  API.getBeer(searchTerm).then(function() {
-    function displayBeers(result){
+  console.log("in searchBeer function");
+  var typeOfSearch = $("#typeofSearch").val();
+  var searchSpecific = $("#typeSelections").val();
+  console.log("type of search: "+ typeOfSearch);
+  console.log("beer type or brew name: " + searchSpecific);
+  API.getBeer(typeOfSearch,searchSpecific).then(function () {
+    function displayBeers(result) {
       var html = "<h1>Results</h1>";
 
-    html += "<ul>";
+      html += "<ul>";
 
-    for (var i = 0; i < result.length; i++) {
-      html += "<li><p> Name: " + result[i].beerName + "</p>";
-      html += "<p> Brewery: " + result[i].breweryName + "</p>";
-      html += "<p>" + result[i].addressOne + "</p>";
-      html += "<p>" + result[i].addressTwo + "</p>";
-      html += "<p>" + result[i].city + "</p>";
-      html += "<p>" + result[i].state + "</p>";
-      html += "<p>" + result[i].zip + "</p>";
-      html += "<p> Type: " + result[i].type + "</p>";
-      html += "<p> ABV: " + result[i].abv + "</p>";
-      html += "<p> Where to purchase: " + result[i].where + "</p>";
-      html += "<p> When is it available: " + result[i].when + "</p></li>";
+      for (var i = 0; i < result.length; i++) {
+        html += "<li><p> Name: " + result[i].beerName + "</p>";
+        html += "<p> Brewery: " + result[i].breweryName + "</p>";
+        html += "<p>" + result[i].addressOne + "</p>";
+        html += "<p>" + result[i].addressTwo + "</p>";
+        html += "<p>" + result[i].city + "</p>";
+        html += "<p>" + result[i].state + "</p>";
+        html += "<p>" + result[i].zip + "</p>";
+        html += "<p> Type: " + result[i].type + "</p>";
+        html += "<p> ABV: " + result[i].abv + "</p>";
+        html += "<p> Where to purchase: " + result[i].where + "</p>";
+        html += "<p> When is it available: " + result[i].when + "</p></li>";
+      }
+
+      html += "</ul>";
+
+      res.send(html);
     }
+    displayBeers();
 
-    html += "</ul>";
-
-    res.send(html);
-    }
-      
   });
 
-  $searchTerm.val("");
+  // searchTermBox.val("");
   $returnPage.show;
 
 }
 
-function reload(){
-  location.reload(); 
-  $returnPage.hide; 
+function reload() {
+  location.reload();
+  $returnPage.hide;
 }
+
+
+$("#typeofSearch").change(function () {
+  var selected = $("#typeofSearch");
+  console.log("selected: " + JSON.stringify(selected.val()));
+  if ((selected.val()) === "type") {
+    $("#typeSelections").css("display","block");
+    $("#brewerySelections").css("display","none");
+    $("#searchBtn").prop("disabled", false);
+  } else if ((selected.val()) === "breweryName") {
+    $("#brewerySelections").css("display","block");
+    $("#typeSelections").css("display","none");
+    $("#searchBtn").prop("disabled", false);
+  } else {
+    $("#typeSelections").css("display","none");
+    $("#brewerySelections").css("display","none");
+    $("#searchBtn").prop("disabled", true);
+  }
+});
+
+$("#addBeerForm").change(function(){
+console.log("in addBeerForm.change() - checking for complete form");
+  if ((!($("#newBeer").val() === "")
+    && !($("#newBrewery").val() === "")
+    && !($("#newType").val() === "")
+    && !($("#newABV").val() === "")
+    && !($("#newAddy1").val() === "")
+    && !($("#newcity").val() === "")
+    && !($("#newState").val() === "")
+    && !($("#newZip").val() === "")
+    && !($("#newWhen").val() === "")
+    && !($("#newWhere").val() === ""))) {
+      $("#newBeerbtn").prop("disabled", false)      
+    }
+  });
 
 // Add event listeners to the search and add beer buttons
 $newBeerbtn.on("click", handleFormSubmit);
 $searchBtn.on("click", searchBeer);
 $returnPage.on("click", reload);
-
-
