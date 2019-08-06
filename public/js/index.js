@@ -86,6 +86,7 @@ var handleFormSubmit = function (event) {
   $("#newAbv").val('');
   $("#where").val("");
   $("#when").val("");
+  $("#newBeerbtn").prop("disabled", true);
 
 };
 
