@@ -2,7 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   var Beer = sequelize.define("Beer", {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true,
     },
     beerName: DataTypes.STRING,
