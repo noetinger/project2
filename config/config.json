@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "432ograL!",
+    "database": "beer_db",
     "host": "localhost",
     "dialect": "mysql"
   },
