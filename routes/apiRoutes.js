@@ -30,7 +30,7 @@ module.exports = function (app) {
   app.get("/api/breweryname/:breweryname", function (req, res) {
     db.Beer.findAll({
       where: {
-        breweryName: req.params.breweryname
+        breweryName: req.params.breweryName
       }
     }).then(function (dbBeer) {
       console.log("Name of Brewery is here!");
@@ -54,20 +54,14 @@ module.exports = function (app) {
   })
   
 
-  // Create a new beer
-  //app.post("/api/addbeer", function(req, res) {
-  //db.Beer.create({(
-  //beerName:req.body.beerName,
-
-  //}).then(function());
-
-  // Create a new example
-  //app.post("/api/beer", function(req, res) {
-  //db.Beer.create(req.body).then(function(dbBeer) {
-  //res.json(dbBeer);
-  // });
-
-  //});
+   //Create a new beer
+  app.post("/api/beers", function(req, res) {
+    console.log(req.body);
+    dbBeer.create(req.body).then(function(dbBeer) {
+      res.json(dbBeer)
+    });
+  })
+  
 
   // Delete an example by id
   //app.delete("/api/examples/:id", function(req, res) {
