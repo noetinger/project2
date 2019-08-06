@@ -7,24 +7,106 @@
           <h1>Welcome to Crafty Drafter!</h1>
           {{!-- <h2>This is our Home Page!</h2> --}}
           <form class="clearfix mb-4" action="POST">
+            <h3>Find a Beer</h3>
             <div class="form-group">
-              <select>
+              <select id="typeofSearch">
+                <option value="default">-Select-</option>
                 <option value="type">Beer Type</option>
                 <option value="breweryName">Brewery Name</option>
               </select>
-              <input type="text" id="searchTerm" class="form-control" aria-describedby="example-text"
-                placeholder="Enter Search Here">
-              <button id="searchBtn" class="btn btn-primary float-right">Submit</button>
+              <select id="typeSelections" style="display: none">
+                <option value="Ale">Ale</option>
+                <option value="Amber Ale">Amber Ale</option>
+                <option value="Blonde Ale">Blonde Ale</option>
+                <option value="Bock">Bock</option>  
+                <option value="Brown Ale">Brown Ale</option>                              
+                <option value="Cider">Cider</option>
+                <option value="IPA">IPA</option>
+                <option value="Lager">Lager</option>
+                <option value="Pale Ale">Pale Ale</option>
+                <option value="Pilsner">Pilsner</option>
+                <option value="Porter">Porter</option>
+                <option value="Saison">Saison</option>
+                <option value="Sour">Sour</option>
+                <option value="Stout">Stout</option>
+                <option value="Wheat Beer">Wheat Beer</option>
+              </select>
+              <select id="brewerySelections" style="display: none">
+                <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
+                <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
+                <option value="Free Range">Free Range</option>
+                <option value="Heist">Heist</option>  
+                <option value="Legion Brewing">Legion Brewing</option>                              
+                <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
+                <option value="NoDa">NoDa</option>
+                <option value="OMB">OMB</option>
+                <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
+                <option value="Salud Cerveceria">Salud Cerveceria</option>
+                <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
+                <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
+                <option value="The Unknown Brewing">The Unknown Brewing</option>
+                <option value="Triple C">Triple C</option>
+                <option value="Wooden Robot Brewery">Wheat Beer</option>
+              </select>
+              <button id="searchBtn" class="btn btn-primary float-right" disabled="true" >Submit</button>
+            </div>
           </form>
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
-          </ul>
+          <form id="addBeerForm"> 
+            <h3>Add to the CLT Craft Beer Collection</h3>
+            <div class="form-group">
+              <label for="newBeerInfo">Name of Beer</label>
+              <input type="text" class="form-control" id="newBeer" placeholder="Your new favorite CLT beer!">
+            </div>
+            <div class="form-group">  
+              <label for="newBrewery">Brewery of Origin</label>
+              <input type="text" class="form-control" id="newBrewery" placeholder="Where's the Brews at?">
+            </div> 
+            <div class="form-group">  
+              <label for="newAddy">Address</label>
+              <input type="text" class="form-control" id="newAddy1" placeholder="Address 1">
+              <input type="text" class="form-control" id="newAddy2" placeholder="Address 2">
+              <input type="text" class="form-control" id="newcity" placeholder="City">
+              <input type="text" class="form-control" id="newState" placeholder="State">
+              <input type="number" class="form-control" id="newZip" placeholder="Zip">  
+            </div> 
+            <div class="form-group"> 
+              <label for="newType">Type of Beer</label>
+              <input type="text" class="form-control" id="newType" placeholder="IPA? Lager?">
+            </div>
+            <div class="form-group">
+              <label for="newBeerInfo">ABV %</label>
+              <input type="number" class="form-control" id="newAbv" placeholder="Enter numbers only">
+            </div>
+            <div class="form-group">
+              <label for="newWhere">Where to Purchase</label>
+              <select id="newWhere">
+                <option value="At Brewery">At Brewery</option>
+                <option value="Local Grocery Stores">Local Grocery Stores</option>
+              </select>
+            </div>  
+            <div class="form-group">
+              <label for="newWhen">When is it available for purchase?</label>
+              <select id="newWhen">
+                <option value="Year Round">Year Round</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+                <option value="Winter">Winter</option>                
+              </select>
+            </div>  
+            <button id="newBeerbtn" class="btn btn-primary float-right" disabled="true" >Submit</button>
+          </form>
+          <div style="display: none">
+            <h3>Examples:</h3>
+            <ul id="example-list" class="list-group">
+              {{#each examples}}
+              <li data-id="{{this.id}}" class="list-group-item">
+                <a href="example/{{this.id}}">{{this.text}}</a>
+                <button class="btn btn-danger float-right delete">ｘ</button>
+              </li>
+              {{/each}}
+            </ul>
+          </div>  
         </div>
       </div>\
     </div>
@@ -38,4 +120,4 @@
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
