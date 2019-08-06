@@ -29,7 +29,7 @@ module.exports = function (app) {
   app.get("/api/breweryname/:breweryname", function (req, res) {
     db.Beer.findAll({
       where: {
-        breweryName: req.params.breweryname
+        breweryName: req.params.breweryName
       }
     }).then(function (dbBeer) {
       console.log("Name of Brewery is here!");
@@ -51,6 +51,16 @@ module.exports = function (app) {
       res.json(dbBeer);
     })
   })
+  
+
+   //Create a new beer
+  //app.post("/api/beers", function(req, res) {
+    //console.log(req.body);
+    //dbBeer.create(req.body).then(function(dbBeer) {
+      //res.json(dbBeer)
+    //});
+ // })
+  
 
   //Create a new example
   app.post("/api/beer", function (req, res) {
