@@ -96,49 +96,34 @@ var searchBeer = function () {
   var typeOfSearch = $("#typeofSearch").val();
   // var searchSpecific;
   if (typeOfSearch === "type") {
+
     beerTypeSelection = $("#typeSelections").val();
-    API.getBeer(beerTypeSelection).then(function (req,res) {
-      console.log("92 " + typeOfSearch);
-      console.log("93 " + beerTypeSelection);
-      displayBeers(res);
-      console.log(res);
-    });
+
+    API.getBeer(beerTypeSelection)
+      .then(function(result) {
+        console.log("92 " + typeOfSearch);
+        console.log("93 " + beerTypeSelection);
+        displayBeers(result);
+      });
     $returnPage.show;
+
   } else if (typeOfSearch === "breweryName") {
+
     breweryTypeSelection = $("#brewerySelections").val();
-    API.getBrewery(breweryTypeSelection).then(function (req,res) {
-      console.log("92 " + typeOfSearch);
-      console.log("93 " + breweryTypeSelection);
-      displayBeers(res);
-      console.log(res);
-    });
+
+    API.getBrewery(breweryTypeSelection)
+      .then(function(result) {
+        console.log("92 " + typeOfSearch);
+        console.log("93 " + breweryTypeSelection);
+        displayBeers(result);
+      });
     $returnPage.show;
   }
 }
 
 function displayBeers(result) {
   $("#searchResults-list").css("display", "block");
-  var html = "<h1>Results</h1>";
-
-  html += "<ul>";
-
-  for (var i = 0; i < result.length; i++) {
-    html += "<li><p> Name: " + result[i].beerName + "</p>";
-    html += "<p> Brewery: " + result[i].breweryName + "</p>";
-    html += "<p>" + result[i].addressOne + "</p>";
-    html += "<p>" + result[i].addressTwo + "</p>";
-    html += "<p>" + result[i].city + "</p>";
-    html += "<p>" + result[i].state + "</p>";
-    html += "<p>" + result[i].zip + "</p>";
-    html += "<p> Type: " + result[i].type + "</p>";
-    html += "<p> ABV: " + result[i].abv + "</p>";
-    html += "<p> Where to purchase: " + result[i].where + "</p>";
-    html += "<p> When is it available: " + result[i].when + "</p></li>";
-  }
-
-  html += "</ul>";
-
-  //result.send(html);
+  $('.searh-results-partial').html(result);
 }
 
 
