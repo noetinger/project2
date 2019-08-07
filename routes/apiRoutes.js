@@ -26,7 +26,7 @@ module.exports = function (app) {
 
 
   //Get route to searching by Brewery Name//
-  app.get("/api/breweryname/:breweryname", function (req, res) {
+  app.get("/api/breweryname/:breweryName", function (req, res) {
     db.Beer.findAll({
       where: {
         breweryName: req.params.breweryName
