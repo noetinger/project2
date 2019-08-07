@@ -97,18 +97,20 @@ var searchBeer = function () {
   // var searchSpecific;
   if (typeOfSearch === "type") {
     beerTypeSelection = $("#typeSelections").val();
-    API.getBeer(beerTypeSelection).then(function () {
+    API.getBeer(beerTypeSelection).then(function (req,res) {
       console.log("92 " + typeOfSearch);
       console.log("93 " + beerTypeSelection);
-      displayBeers(result);
+      displayBeers(res);
+      console.log(res);
     });
     $returnPage.show;
   } else if (typeOfSearch === "breweryName") {
     breweryTypeSelection = $("#brewerySelections").val();
-    API.getBrewery(breweryTypeSelection).then(function () {
+    API.getBrewery(breweryTypeSelection).then(function (req,res) {
       console.log("92 " + typeOfSearch);
       console.log("93 " + breweryTypeSelection);
-      displayBeers(result);
+      displayBeers(res);
+      console.log(res);
     });
     $returnPage.show;
   }
@@ -135,7 +137,7 @@ function displayBeers(result) {
 
   html += "</ul>";
 
-  res.send(html);
+  //result.send(html);
 }
 
 
