@@ -117,6 +117,7 @@ var searchBeer = function () {
 }
 
 function displayBeers(result) {
+  $("#searchResults-list").css("display", "block");
   var html = "<h1>Results</h1>";
 
   html += "<ul>";
