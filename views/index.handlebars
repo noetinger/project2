@@ -1,10 +1,5 @@
 
 
-
-<div id="bg">
-    <img src="/images/beerbg.jpg" class="beer" alt="background">
-  </div>
-
 <div id="home">
 
     <div class="container main-stuff">
@@ -23,12 +18,12 @@
                 <form class="clearfix mb-4" action="POST">
                   <h3 class="card-title">Find a Beer</h3>
                   <div class="form-group">
-                    <select id="typeofSearch">
+                    <select id="typeofSearch" class="find-input">
                       <option value="default">-Select-</option>
                       <option value="type">Beer Type</option>
                       <option value="breweryName">Brewery Name</option>
                     </select>
-                    <select id="typeSelections" style="display: none">
+                    <select id="typeSelections" class="find-input" style="display: none">
                       <option value="Ale">Ale</option>
                       <option value="Amber Ale">Amber Ale</option>
                       <option value="Blonde Ale">Blonde Ale</option>
@@ -45,7 +40,7 @@
                       <option value="Stout">Stout</option>
                       <option value="Wheat Beer">Wheat Beer</option>
                     </select>
-                    <select id="brewerySelections" style="display: none">
+                    <select id="brewerySelections" class="find-input" style="display: none">
                       <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
                       <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
                       <option value="Free Range">Free Range</option>
@@ -178,10 +173,9 @@
 
         <footer class="footer">
         
-          <div class="footer-left">
-        
-        
-            <p class="footer-links">
+          <div>
+      
+            <div class="footer-links">
               <a href="https://github.com/" target="_blank">Alicia</a>
               ·
               <a href="https://github.com/" target="_blank">Jenny</a>
@@ -189,20 +183,16 @@
               <a href="https://github.com/" target="_blank">Jarvis</a>
               ·
               <a href="https://github.com/" target="_blank">Nick</a>
-            </p>
+            </div>
         
-            <p class="footer-company-name">Crafty Drafter &copy; 2019</p>
+            <div class="footer-name">Crafty Drafter &copy; 2019</div>
         
             <div class="footer-icons">
-              <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i>
-        
-                </i></a>
+              <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         
           </div>
-        
-        
-        
+
         </footer>
 
 
