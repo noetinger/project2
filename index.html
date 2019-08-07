@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../project2/public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
@@ -16,8 +16,8 @@
 <body>
 
   <div id="bg">
-    <img src="public/images/beerbg.jpg" class="beer" alt="background">
-  </div>
+      <img src="/images/beerbg.jpg" class="beer" alt="background">
+    </div>
 
 
   <div id="home">
@@ -26,16 +26,10 @@
       <div class="row">
 
         <div class="col-10 offset-1">
-          <!-- <div class="card header-card">
-              <div class="card-body"> -->
-          <img src="public/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
-          <!-- </div>
-          </div> -->
-        </div>
+            <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
+          </div>
 
 
-
-        <!-- {{!-- <h2>This is our Home Page!</h2> --}} -->
         <div class="row">
           <div class="col-md-6">
             <div class="card find-beer-card">
@@ -82,7 +76,7 @@
                       <option value="Triple C">Triple C</option>
                       <option value="Wooden Robot Brewery">Wheat Beer</option>
                     </select>
-                    <button id="searchBtn" class="btn btn-primary float-right" disabled="true">Search</button>
+                    <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
                   </div>
                 </form>
               </div>
@@ -137,7 +131,7 @@
                       <option value="Winter">Winter</option>
                     </select>
                   </div>
-                  <button id="newBeerbtn" class="btn btn-primary float-right" disabled="true">Add Your Beer</button>
+                  <button id="newBeerbtn" class="btn  float-right" disabled="true">Add Your Beer</button>
                 </form>
                 <div style="display: none">
                   <h3>Examples:</h3>
@@ -145,7 +139,7 @@
                     {{#each examples}}
                     <li data-id="{{this.id}}" class="list-group-item">
                       <a href="example/{{this.id}}">{{this.text}}</a>
-                      <button class="btn btn-danger float-right delete">ｘ</button>
+                      <button class="btn  float-right delete">ｘ</button>
                     </li>
                     {{/each}}
                   </ul>
@@ -156,49 +150,34 @@
         </div>
       </div>
 
-
-      <!-- <div class="footer">
-        <div id="button"></div>
-        <div id="container">
-          <div id="cont">
-            <div class="footer_center">
-              <p><a href="https://www.google.com/" target="_blank">Alicia </a> ||
-              <a href="https://www.google.com/" target="_blank">Jenny</a> ||
-              <a href="https://www.google.com/" target="_blank">Jarvis</a> ||
-              <a href="https://www.google.com/" target="_blank">Nick</a></p>
-
+      <footer class="footer">
+        
+          <div class="footer-left">
+        
+        
+            <p class="footer-links">
+              <a href="https://github.com/" target="_blank">Alicia</a>
+              ·
+              <a href="https://github.com/" target="_blank">Jenny</a>
+              ·
+              <a href="https://github.com/" target="_blank">Jarvis</a>
+              ·
+              <a href="https://github.com/" target="_blank">Nick</a>
+            </p>
+        
+            <p class="footer-company-name">Crafty Drafter &copy; 2019</p>
+        
+            <div class="footer-icons">
+              <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i>
+        
+                </i></a>
             </div>
+        
           </div>
-        </div>
-      </div> -->
-<footer class="footer">
-
-  <div class="footer-left">
-
-
-    <p class="footer-links">
-      <a href="#">Alicia</a>
-      ·
-      <a href="#">Jenny</a>
-      ·
-      <a href="#">Jarvis</a>
-      ·
-      <a href="#">Nick</a>
-    </p>
-
-    <p class="footer-company-name">Crafty Drafter &copy; 2019</p>
-
-    <div class="footer-icons">
-      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i>
-
-        </i></a>
-    </div>
-
-  </div>
-
-
-
-</footer>
+        
+        
+        
+        </footer>
 
 
 

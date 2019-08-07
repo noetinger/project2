@@ -1,26 +1,16 @@
 
 
-<div id="bg">
-    <img src="public/images/beerbg.jpg" class="beer" alt="background">
-  </div>
+<div id="home">
 
-
-  <div id="home">
     <div class="container main-stuff">
 
       <div class="row">
 
         <div class="col-10 offset-1">
-          <!-- <div class="card header-card">
-              <div class="card-body"> -->
-          <img src="public/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
-          <!-- </div>
-          </div> -->
+          <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
         </div>
 
 
-
-        <!-- {{!-- <h2>This is our Home Page!</h2> --}} -->
         <div class="row">
           <div class="col-md-6">
             <div class="card find-beer-card">
@@ -28,12 +18,12 @@
                 <form class="clearfix mb-4" action="POST">
                   <h3 class="card-title">Find a Beer</h3>
                   <div class="form-group">
-                    <select id="typeofSearch">
+                    <select id="typeofSearch" class="find-input">
                       <option value="default">-Select-</option>
                       <option value="type">Beer Type</option>
                       <option value="breweryName">Brewery Name</option>
                     </select>
-                    <select id="typeSelections" style="display: none">
+                    <select id="typeSelections" class="find-input" style="display: none">
                       <option value="Ale">Ale</option>
                       <option value="Amber Ale">Amber Ale</option>
                       <option value="Blonde Ale">Blonde Ale</option>
@@ -50,7 +40,7 @@
                       <option value="Stout">Stout</option>
                       <option value="Wheat Beer">Wheat Beer</option>
                     </select>
-                    <select id="brewerySelections" style="display: none">
+                    <select id="brewerySelections" class="find-input" style="display: none">
                       <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
                       <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
                       <option value="Free Range">Free Range</option>
@@ -67,7 +57,7 @@
                       <option value="Triple C">Triple C</option>
                       <option value="Wooden Robot Brewery">Wheat Beer</option>
                     </select>
-                    <button id="searchBtn" class="btn btn-primary float-right" disabled="true">Search</button>
+                    <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
                   </div>
                 </form>
               </div>
@@ -155,17 +145,12 @@
                       <option value="Winter">Winter</option>
                     </select>
                   </div>
-                  <button id="newBeerbtn" class="btn btn-primary float-right" disabled="true">Add Your Beer</button>
+                  <button id="newBeerbtn" class="btn float-right" disabled="true">Add Your Beer</button>
                 </form>
-                <div style="display: none">
-                  <h3>Examples:</h3>
-                  <ul id="example-list" class="list-group">
-                    {{#each examples}}
-                    <li data-id="{{this.id}}" class="list-group-item">
-                      <a href="example/{{this.id}}">{{this.text}}</a>
-                      <button class="btn btn-danger float-right delete">ｘ</button>
-                    </li>
-                    {{/each}}
+                <div id="searchResults-list" style="display: none">
+                  <h3>Results</h3>
+                  <ul class="list-group searh-results-partial">
+                    {{!-- eventually search results will go here --}}
                   </ul>
                 </div>
               </div>
@@ -174,38 +159,33 @@
         </div>
       </div>
 
-
         <footer class="footer">
+        
+          <div>
+      
+            <div class="footer-links">
+              <a href="https://github.com/" target="_blank">Alicia</a>
+              ·
+              <a href="https://github.com/" target="_blank">Jenny</a>
+              ·
+              <a href="https://github.com/" target="_blank">Jarvis</a>
+              ·
+              <a href="https://github.com/" target="_blank">Nick</a>
+            </div>
+        
+            <div class="footer-name">Crafty Drafter &copy; 2019</div>
+        
+            <div class="footer-icons">
+              <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        
+          </div>
 
-  <div class="footer-left">
-
-
-    <p class="footer-links">
-      <a href="#">Alicia</a>
-      ·
-      <a href="#">Jenny</a>
-      ·
-      <a href="#">Jarvis</a>
-      ·
-      <a href="#">Nick</a>
-    </p>
-
-    <p class="footer-company-name">Crafty Drafter &copy; 2019</p>
-
-    <div class="footer-icons">
-      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i>
-
-        </i></a>
-    </div>
-
-  </div>
-
-
-
-</footer>
+        </footer>
 
 
 
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script type="text/javascript" src="/js/index.js"></script>
       <script src="https://kit.fontawesome.com/f518b1ca36.js"></script>
+
