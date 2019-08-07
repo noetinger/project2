@@ -149,20 +149,8 @@
                 </form>
                 <div id="searchResults-list" style="display: none">
                   <h3>Results</h3>
-                  <ul class="list-group">
-                    {{#each result}}
-                    <li data-id="resName" class="list-group-item">{{this.beerName}}</li>
-                    <li data-id="resBrewery" class="list-group-item">{{this.breweryName}}</li>
-                    <li data-id="resAddy1" class="list-group-item">{{this.addressOne}}</li>
-                    <li data-id="resAddy2" class="list-group-item">{{this.addressTwo}}</li>
-                    <li data-id="resCity" class="list-group-item">{{this.city}}</li>
-                    <li data-id="resState" class="list-group-item">{{this.state}}</li>
-                    <li data-id="resZip" class="list-group-item">{{this.zip}}</li>
-                    <li data-id="resType" class="list-group-item">{{this.type}}</li>
-                    <li data-id="resAbv" class="list-group-item">{{this.abv}}</li>
-                    <li data-id="resWhere" class="list-group-item">{{this.where}}</li>
-                    <li data-id="resWhen" class="list-group-item">{{this.zip}}</li>
-                    {{/each}}
+                  <ul class="list-group searh-results-partial">
+                    {{!-- eventually search results will go here --}}
                   </ul>
                 </div>
               </div>
