@@ -53,7 +53,7 @@ module.exports = function (app) {
   })
   
 
-   //Create a new beer
+  //Create a new beer
   //app.post("/api/beers", function(req, res) {
     //console.log(req.body);
     //dbBeer.create(req.body).then(function(dbBeer) {

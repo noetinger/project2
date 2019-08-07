@@ -152,14 +152,21 @@
                   </div>
                   <button id="newBeerbtn" class="btn float-right" disabled="true">Add Your Beer</button>
                 </form>
-                <div style="display: none">
-                  <h3>Examples:</h3>
-                  <ul id="example-list" class="list-group">
-                    {{#each examples}}
-                    <li data-id="{{this.id}}" class="list-group-item">
-                      <a href="example/{{this.id}}">{{this.text}}</a>
-                      <button class="btn float-right delete">ｘ</button>
-                    </li>
+                <div id="searchResults-list" style="display: none">
+                  <h3>Results</h3>
+                  <ul class="list-group">
+                    {{#each result}}
+                    <li data-id="resName" class="list-group-item">{{this.beerName}}</li>
+                    <li data-id="resBrewery" class="list-group-item">{{this.breweryName}}</li>
+                    <li data-id="resAddy1" class="list-group-item">{{this.addressOne}}</li>
+                    <li data-id="resAddy2" class="list-group-item">{{this.addressTwo}}</li>
+                    <li data-id="resCity" class="list-group-item">{{this.city}}</li>
+                    <li data-id="resState" class="list-group-item">{{this.state}}</li>
+                    <li data-id="resZip" class="list-group-item">{{this.zip}}</li>
+                    <li data-id="resType" class="list-group-item">{{this.type}}</li>
+                    <li data-id="resAbv" class="list-group-item">{{this.abv}}</li>
+                    <li data-id="resWhere" class="list-group-item">{{this.where}}</li>
+                    <li data-id="resWhen" class="list-group-item">{{this.zip}}</li>
                     {{/each}}
                   </ul>
                 </div>
