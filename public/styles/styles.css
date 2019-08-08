@@ -7,10 +7,10 @@ body, html {
 
 .bg { 
   /* The image used */
-  background-image: url("/images/beerbg.jpg");
+  background-image: url("../images/beerbg.jpg");
 
   /* Full height */
-  height: 100%; 
+  height: auto;
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -23,26 +23,21 @@ body, html {
 
 /* main-content */
 
-.beer { 
-  position: relative; 
-  width: 100%; /* for IE 6 */
- }   
+
 
 .logo{
-  
   height: 275px;
   margin: 11px 17.5%;
 }
 
 
 .main-stuff { 
-  position: absolute; 
-  top: 7%; 
-  left: 10%; 
+  position: relative; 
+  top: 25px; 
+  
   width: 90%; 
   height: 825px; 
   color:black;
-  /* background-color: #fff5ee; */
   background-image: url(/images/backgrounds/purty_wood/purty_wood.png);
   box-shadow: 10px -10px #ecd9c6;
   border-radius: 25px;
@@ -78,14 +73,16 @@ body, html {
   }
 
   .find-input {
-    margin: 5px auto;
+    margin-top: 15px;
     font-size: 18px;
+    margin-bottom: 15px;
   }
 
 
   .btn {
     background-color: #02396d;
     color: #000000;
+    margin-top: 15px;
   }
 
 
@@ -94,26 +91,11 @@ body, html {
 
 
 /* footer */
-footer {
-  font-size: 22px;
-  text-align: left;
+
+
+#pageFooter {
+  font-size: 30px;
 }
 
- a {
-  color: #02396d;
-}
 
-.footer-links {
-  text-align: left;
-}
-
-.footer-name {
-  margin-left: 20%;
-  
-}
-
-.footer-icons {
-  font-size: 45px;
-  text-align: right;
-}
 /* footer */
