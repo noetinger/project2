@@ -171,3 +171,18 @@ $("#addBeerForm").change(function () {
 $newBeerbtn.on("click", handleFormSubmit);
 $searchBtn.on("click", searchBeer);
 $returnPage.on("click", reload);
+
+
+//Titles and Link
+const fs = require('fs');
+
+fs.readFile('beernews.json', (err, data) => {
+    if (err) throw err;
+    let articles = {
+      for (var i=0; i<data.length; i++) {
+        articleTitle: data[i].title,
+        articleLink: data[i].link
+      }     
+    }
+    console.log('article info' + JSON.parse(articles));
+});
