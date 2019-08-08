@@ -22,13 +22,13 @@ body, html {
 
 
 /* main-content */
-
-
-
 .logo{
   height: 275px;
-  margin: 11px 17.5%;
+  margin: 2.5% 26%;
+  
 }
+
+
 
 
 .main-stuff { 
@@ -84,8 +84,6 @@ body, html {
     color: #000000;
     margin-top: 15px;
   }
-
-
 
 /* main-content */
 
