@@ -4,100 +4,217 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../project2/public/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
   <title>Crafty Drafter</title>
 
   
 </head>
 
 <body>
-  
-    <div id="bg">
-        <img src="beerbg.jpg" class="beer" alt="background">
+
+  <div id="bg">
+      <img src="/images/beerbg.jpg" class="beer" alt="background">
     </div>
 
 
-<div id="home">
-        
+  <div id="home">
     <div class="container main-stuff">
-        <img class="logo" src="logomain.png">
+
       <div class="row">
-        <div class="col-8 offset-2">
-          <h1>{{msg}}</h1>
-          <h2>This is our Home Page!</h2>
-          form class="clearfix mb-4" action="POST">
-            <div class="form-group">
-              <select>
-                <option value="type">Beer Type</option>
-                <option value="breweryName">Brewery Name</option>
-              </select>
-              <select id="typeSelections" style="display: none">
-                <option value="Ale">Ale</option>
-                <option value="Amber Ale">Amber Ale</option>
-                <option value="Blonde Ale">Blonde Ale</option>
-                <option value="Bock">Bock</option>  
-                <option value="Brown Ale">Brown Ale</option>                              
-                <option value="Cider">Cider</option>
-                <option value="IPA">IPA</option>
-                <option value="Lager">Lager</option>
-                <option value="Pale Ale">Pale Ale</option>
-                <option value="Pilsner">Pilsner</option>
-                <option value="Porter">Porter</option>
-                <option value="Saison">Saison</option>
-                <option value="Sour">Sour</option>
-                <option value="Stout">Stout</option>
-                <option value="Wheat Beer">Wheat Beer</option>
-              </select>
-              <select id="brewerySelections" style="display: none">
-                <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
-                <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
-                <option value="Free Range">Free Range</option>
-                <option value="Heist">Heist</option>  
-                <option value="Legion Brewing">Legion Brewing</option>                              
-                <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
-                <option value="NoDa">NoDa</option>
-                <option value="OMB">OMB</option>
-                <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
-                <option value="Salud Cerveceria">Salud Cerveceria</option>
-                <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
-                <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
-                <option value="The Unknown Brewing">The Unknown Brewing</option>
-                <option value="Triple C">Triple C</option>
-                <option value="Wooden Robot Brewery">Wheat Beer</option>
-              </select>
-              <button id="searchBtn" class="btn btn-primary float-right">Submit</button>
-          </form>
-          
-          <h3>Examples:</h3>
-          <ul id="example-list" class="list-group">
-            {{#each examples}}
-            <li data-id="{{this.id}}" class="list-group-item">
-              <a href="example/{{this.id}}">{{this.text}}</a>
-              <button class="btn btn-danger float-right delete">ｘ</button>
-            </li>
-            {{/each}}
-          </ul>
+
+        <div class="col-10 offset-1">
+            <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
+          </div>
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card find-beer-card">
+              <div class="card-body">
+                <form class="clearfix mb-4" action="POST">
+                  <h3 class="card-title">Find a Beer</h3>
+                  <div class="form-group">
+                    <select id="typeofSearch">
+                      <option value="default">-Select-</option>
+                      <option value="type">Beer Type</option>
+                      <option value="breweryName">Brewery Name</option>
+                    </select>
+                    <select id="typeSelections" style="display: none">
+                      <option value="Ale">Ale</option>
+                      <option value="Amber Ale">Amber Ale</option>
+                      <option value="Blonde Ale">Blonde Ale</option>
+                      <option value="Bock">Bock</option>
+                      <option value="Brown Ale">Brown Ale</option>
+                      <option value="Cider">Cider</option>
+                      <option value="IPA">IPA</option>
+                      <option value="Lager">Lager</option>
+                      <option value="Pale Ale">Pale Ale</option>
+                      <option value="Pilsner">Pilsner</option>
+                      <option value="Porter">Porter</option>
+                      <option value="Saison">Saison</option>
+                      <option value="Sour">Sour</option>
+                      <option value="Stout">Stout</option>
+                      <option value="Wheat Beer">Wheat Beer</option>
+                    </select>
+                    <select id="brewerySelections" style="display: none">
+                      <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
+                      <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
+                      <option value="Free Range">Free Range</option>
+                      <option value="Heist">Heist</option>
+                      <option value="Legion Brewing">Legion Brewing</option>
+                      <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
+                      <option value="NoDa">NoDa</option>
+                      <option value="OMB">OMB</option>
+                      <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
+                      <option value="Salud Cerveceria">Salud Cerveceria</option>
+                      <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
+                      <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
+                      <option value="The Unknown Brewing">The Unknown Brewing</option>
+                      <option value="Triple C">Triple C</option>
+                      <option value="Wooden Robot Brewery">Wheat Beer</option>
+                    </select>
+                    <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6">
+            <div class="card add-beer-card">
+              <div class="card-body">
+                <form id="addBeerForm">
+                  <h3 class="card-title">Add to the CLT Craft Beer Collection</h3>
+                  <div class="form-group">
+                    <label for="newBeerInfo">Name of Beer</label>
+                    <input type="text" class="form-control" id="newBeer" placeholder="Your new favorite CLT beer!">
+                  </div>
+                  <div class="form-group">
+                    <label for="newBrewery">Brewery of Origin</label>
+                    <input type="text" class="form-control" id="newBrewery" placeholder="Where's the Brews at?">
+                  </div>
+                  <div class="form-group">
+                    <label for="newAddy">Address</label>
+                    <input type="text" class="form-control" id="newAddy1" placeholder="Address 1">
+                    <input type="text" class="form-control" id="newAddy2" placeholder="Address 2">
+                    <input type="text" class="form-control" id="newcity" placeholder="City">
+                    <input type="text" class="form-control" id="newState" placeholder="State">
+                    <input type="text" class="form-control" id="newZip" placeholder="Zip">
+                  </div>
+                  <div class="form-group">
+                    <label for="newType">Type of Beer</label>
+                    <input type="text" class="form-control" id="newType" placeholder="IPA? Lager?">
+                  </div>
+                  <div class="form-group">
+                    <label for="newBeerInfo">ABV %</label>
+                    <input type="number" class="form-control" id="newAbv" placeholder="Enter numbers only">
+                  </div>
+                  <div class="form-group">
+                    <label for="newWhere">Where to Purchase</label>
+                    <select id="newWhere">
+                      <option value="At Brewery">At Brewery</option>
+                      <option value="Local Grocery Stores">Local Grocery Stores</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="newWhen">When is it available for purchase?</label>
+                    <select id="newWhen">
+                      <option value="Year Round">Year Round</option>
+                      <option value="Spring">Spring</option>
+                      <option value="Summer">Summer</option>
+                      <option value="Fall">Fall</option>
+                      <option value="Winter">Winter</option>
+                    </select>
+                  </div>
+                  <button id="newBeerbtn" class="btn  float-right" disabled="true">Add Your Beer</button>
+                </form>
+                <div style="display: none">
+                  <h3>Examples:</h3>
+                  <ul id="example-list" class="list-group">
+                    {{#each examples}}
+                    <li data-id="{{this.id}}" class="list-group-item">
+                      <a href="example/{{this.id}}">{{this.text}}</a>
+                      <button class="btn  float-right delete">ｘ</button>
+                    </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  
-
-</div> 
-<!-- container div closing -->
 
 
+      
+    <!-- <footer class="footer">
+      <nav class="navbar navbar-default navbar-custom">
+        <div class="container-fluid">
+          <div class="nav navbar-nav navbar-left">
+            <p class="footer-links">
+              <a href="https://github.com/" target="_blank">Alicia</a>
+              ·
+              <a href="https://github.com/" target="_blank">Jenny</a>
+              ·
+              <a href="https://github.com/" target="_blank">Jarvis</a>
+              ·
+              <a href="https://github.com/" target="_blank">Nick</a>
+            </p>
+          </div>
 
-<div class="footer">
-        <div id="button"></div>
-      <div id="container">
-      <div id="cont">
-      <div class="footer_center">
-             <p><a href="https://www.google.com/" target="_blank">Alicia</a></p>
-             <p><a href="https://www.google.com/" target="_blank">Jenny</a></p>
-      </div>
-      </div>
-      </div>
-      </div>
+          <div class="text-center center-block">
+            <p class="footer-company-name">Crafty Drafter &copy; 2019</p>
+          </div>
+
+          <div class="nav navbar-nav navbar-right">
+            <a href=""><i id="social-gp" class="fab fa-github"></i></a>
+          </div>
+
+        </div>
+
+      </nav>
+    </footer> -->
+
+    <footer id="pageFooter" class="fixed-bottom text-center text-muted">
+<!-- 
+      <div class="text-center center-block">
+        <p class="footer-company-name">Crafty Drafter &copy; 2019</p>
+      </div>​ -->
+
+      ​<div class="member-names">
+        <a href="https://github.com/" target="_blank" class="btn btn-secondary text-left mb-3 mr-4"><span
+            class="fab fa-github pr-2"></span>Portfolio: Alicia T</a>
+        ​
+        <a href="https://github.com/jbjrock" target="_blank" class="btn btn-secondary text-left mb-3 mr-4"><span
+            class="fab fa-github pr-2"></span>Portfolio: Jarvis M</a>
+        ​
+        <a href="https://github.com/" target="_blank" class="btn btn-secondary text-left mb-3 mr-4"><span
+            class="fab fa-github pr-2"></span>Portfolio: Jenny H</a>
+        ​
+        ​
+        <a href="https://github.com/" target="_blank" class="btn btn-secondary text-left mb-3 mr-4"><span
+            class="fab fa-github pr-2"></span>Portfolio: Nick O</a>
+        ​</div>
+
+    </footer>
+
+
+
+
+      <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="/js/index.js"></script> -->
+      <script src="https://kit.fontawesome.com/f518b1ca36.js"></script>
+
+
+
+
+
+
 </body>
+
 </html>
