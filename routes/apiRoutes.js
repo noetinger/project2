@@ -46,9 +46,9 @@ module.exports = function (app) {
       });
     })
 
-    app.get('beers', (req, res) => {
-      res.render('some-handlebars.hbs')
-    })
+    // app.get('beers', (req, res) => {
+    //   res.render('some-handlebars.hbs')
+    // })
   })
 
 
