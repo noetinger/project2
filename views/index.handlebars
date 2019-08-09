@@ -58,6 +58,10 @@
                   <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
                 </div>
               </form>
+
+              <div class="articleInfo">
+                <h3>Craft Beer News</h3>
+                  {{articles}}
             </div>
 
           </div>
@@ -152,21 +156,7 @@
                     {{!-- eventually search results will go here --}}
                   </ul>
                   </div>
-             
-                
-              <div style="display: none">
-                <h3>Examples:</h3>
-                <ul id="example-list" class="list-group">
-                  {{#each examples}}
-                  <li data-id="{{this.id}}" class="list-group-item">
-                    <a href="example/{{this.id}}">{{this.text}}</a>
-                    <button class="btn float-right delete">ｘ</button>
-                  </li>
-                  {{/each}}
-                </ul>
               </div>
-
-
             </div>
           </div>
         </div>
