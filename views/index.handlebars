@@ -1,72 +1,72 @@
-
-
 <div id="home">
 
-    <div class="container main-stuff">
+  <div class="container main-stuff">
+
+    <div class="row">
+
+      <div class="col-10 image-div">
+        <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
+      </div>
+
 
       <div class="row">
+        <div class="col-md-6">
+          <div class="card find-beer-card">
+            <div class="card-body">
+              <form class="clearfix mb-4" action="POST">
+                <h3 class="card-title">Find a Beer</h3>
+                <div class="form-group">
+                  <select id="typeofSearch" class="find-input">
+                    <option value="default">-Select-</option>
+                    <option value="type">Beer Type</option>
+                    <option value="breweryName">Brewery Name</option>
+                  </select>
+                  <select id="typeSelections" class="find-input" style="display: none">
+                    <option value="Ale">Ale</option>
+                    <option value="Amber Ale">Amber Ale</option>
+                    <option value="Blonde Ale">Blonde Ale</option>
+                    <option value="Bock">Bock</option>
+                    <option value="Brown Ale">Brown Ale</option>
+                    <option value="Cider">Cider</option>
+                    <option value="IPA">IPA</option>
+                    <option value="Lager">Lager</option>
+                    <option value="Pale Ale">Pale Ale</option>
+                    <option value="Pilsner">Pilsner</option>
+                    <option value="Porter">Porter</option>
+                    <option value="Saison">Saison</option>
+                    <option value="Sour">Sour</option>
+                    <option value="Stout">Stout</option>
+                    <option value="Wheat Beer">Wheat Beer</option>
+                  </select>
+                  <select id="brewerySelections" class="find-input" style="display: none">
+                    <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
+                    <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
+                    <option value="Free Range">Free Range</option>
+                    <option value="Heist">Heist</option>
+                    <option value="Legion Brewing">Legion Brewing</option>
+                    <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
+                    <option value="NoDa">NoDa</option>
+                    <option value="OMB">OMB</option>
+                    <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
+                    <option value="Salud Cerveceria">Salud Cerveceria</option>
+                    <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
+                    <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
+                    <option value="The Unknown Brewing">The Unknown Brewing</option>
+                    <option value="Triple C">Triple C</option>
+                    <option value="Wooden Robot Brewery">Wheat Beer</option>
+                  </select>
+                  <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
+                </div>
+              </form>
 
-        <div class="col-10 offset-1">
-          <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
-        </div>
-
-
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card find-beer-card">
-              <div class="card-body">
-                <form class="clearfix mb-4" action="POST">
-                  <h3 class="card-title">Find a Beer</h3>
-                  <div class="form-group">
-                    <select id="typeofSearch" class="find-input">
-                      <option value="default">-Select-</option>
-                      <option value="type">Beer Type</option>
-                      <option value="breweryName">Brewery Name</option>
-                    </select>
-                    <select id="typeSelections" class="find-input" style="display: none">
-                      <option value="Ale">Ale</option>
-                      <option value="Amber Ale">Amber Ale</option>
-                      <option value="Blonde Ale">Blonde Ale</option>
-                      <option value="Bock">Bock</option>
-                      <option value="Brown Ale">Brown Ale</option>
-                      <option value="Cider">Cider</option>
-                      <option value="IPA">IPA</option>
-                      <option value="Lager">Lager</option>
-                      <option value="Pale Ale">Pale Ale</option>
-                      <option value="Pilsner">Pilsner</option>
-                      <option value="Porter">Porter</option>
-                      <option value="Saison">Saison</option>
-                      <option value="Sour">Sour</option>
-                      <option value="Stout">Stout</option>
-                      <option value="Wheat Beer">Wheat Beer</option>
-                    </select>
-                    <select id="brewerySelections" class="find-input" style="display: none">
-                      <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
-                      <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
-                      <option value="Free Range">Free Range</option>
-                      <option value="Heist">Heist</option>
-                      <option value="Legion Brewing">Legion Brewing</option>
-                      <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
-                      <option value="NoDa">NoDa</option>
-                      <option value="OMB">OMB</option>
-                      <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
-                      <option value="Salud Cerveceria">Salud Cerveceria</option>
-                      <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
-                      <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
-                      <option value="The Unknown Brewing">The Unknown Brewing</option>
-                      <option value="Triple C">Triple C</option>
-                      <option value="Wooden Robot Brewery">Wheat Beer</option>
-                    </select>
-                    <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
-                  </div>
-                </form>
+              <div class="articleInfo">
+                <h3>Craft Beer News</h3>
+                  {{> articles}}
               </div>
 
-            </div>
           </div>
-
-
-
+        </div>
+        </div>
           <div class="col-md-6">
             <div class="card add-beer-card">
               <div class="card-body">
@@ -147,45 +147,24 @@
                   </div>
                   <button id="newBeerbtn" class="btn float-right" disabled="true">Add Your Beer</button>
                 </form>
+
+
+             
                 <div id="searchResults-list" style="display: none">
                   <h3>Results</h3>
                   <ul class="list-group searh-results-partial">
                     {{!-- eventually search results will go here --}}
                   </ul>
-                </div>
+                  </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-        <footer class="footer">
-        
-          <div>
-      
-            <div class="footer-links">
-              <a href="https://github.com/" target="_blank">Alicia</a>
-              ·
-              <a href="https://github.com/" target="_blank">Jenny</a>
-              ·
-              <a href="https://github.com/" target="_blank">Jarvis</a>
-              ·
-              <a href="https://github.com/" target="_blank">Nick</a>
-            </div>
-        
-            <div class="footer-name">Crafty Drafter &copy; 2019</div>
-        
-            <div class="footer-icons">
-              <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        
-          </div>
-
-        </footer>
-
-
-
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="/js/index.js"></script>
-      <script src="https://kit.fontawesome.com/f518b1ca36.js"></script>
-
+  </div>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script src="https://kit.fontawesome.com/f518b1ca36.js"></script>

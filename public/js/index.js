@@ -31,6 +31,12 @@ var API = {
       type: "GET"
     });
   },
+  getArticles: function (articleDisplay) {
+    return $.ajax({
+      url: "/api/articles" + articleDisplay, 
+      type: "GET"
+    });
+  }
 };
 
 

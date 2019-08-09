@@ -1,0 +1,11 @@
+
+{{#if articles}}
+    {{#each articles}}
+    {{log this.title}}
+        <li data-id="resName" class="list-group-item">{{this.title}}</li>
+        <li data-id="resBrewery" class="list-group-item">{{this.link}}</li>
+    {{/each}}
+{{else}}
+    <li>Sorry, we couldn't find any articles!</li>
+{{/if}}
+

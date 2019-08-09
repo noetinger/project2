@@ -46,9 +46,9 @@ module.exports = function (app) {
       });
     })
 
-    app.get('beers', (req, res) => {
-      res.render('some-handlebars.hbs')
-    })
+    // app.get('beers', (req, res) => {
+    //   res.render('some-handlebars.hbs')
+    // })
   })
 
 
@@ -65,15 +65,6 @@ module.exports = function (app) {
       res.json(dbBeer);
     })
   })
-  
-
-  //Create a new beer
-  //app.post("/api/beers", function(req, res) {
-    //console.log(req.body);
-    //dbBeer.create(req.body).then(function(dbBeer) {
-      //res.json(dbBeer)
-    //});
- // })
   
 
   //Create a new example
@@ -96,10 +87,17 @@ module.exports = function (app) {
     });
   });
 
-  // Delete an example by id
-  //app.delete("/api/examples/:id", function(req, res) {
-  //db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //res.json(dbExample);
-  // });
-  //});
+  //Get route for returning articles
+  app.get("/api/articles", function (req, res) {
+    return db.Articles.findAll({
+
+    }).then(function (dbArticles) {
+
+      return res.render('partials/articles', {
+        Articles: dbArticles,
+        layout: false,
+      });
+    })
+  })
+  
 };
