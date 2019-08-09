@@ -90,3 +90,10 @@ const fs = require("fs");
 module.exports = app;
 
 
+//Titles and Link
+fs.readFile('/beernews.json', (err, data) => {
+  if (err) throw err;
+  let articles = JSON.parse(data)
+
+  console.log('article info' + articles);
+});
