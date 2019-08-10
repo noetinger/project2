@@ -14,7 +14,6 @@ https://intense-refuge-69271.herokuapp.com/
 <ul>
 <li>JavaScript</li>
 <li>Nodejs</li>
-<li>Puppeteer</li>
 <li>API</li>
 <li>SQL</li>
 <li>Handlebars</li>
