@@ -24,8 +24,7 @@ body, html {
 /* main-content */
 .logo{
   height: 275px;
-  margin: 2.5% 26%;
-  
+  margin: 2.5% 26%; 
 }
 
 
@@ -34,7 +33,6 @@ body, html {
 .main-stuff { 
   position: relative; 
   top: 25px; 
-  
   width: 90%; 
   height: 825px; 
   color:black;
@@ -69,6 +67,11 @@ body, html {
     padding: 2.5%;
     margin-bottom: 10%;
     font-size: 18px;
+  }
+
+  .article-info {
+    width: 50%;
+  margin: 0 auto;
   }
 
   .find-input {
