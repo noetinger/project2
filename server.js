@@ -29,7 +29,7 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = {
-  force: true
+  force: false
 };
 
 // If running a test, set syncOptions.force to true
