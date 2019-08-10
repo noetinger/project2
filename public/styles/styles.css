@@ -87,6 +87,11 @@ body, html {
     margin-top: 15px;
   }
 
+  .article-info {
+    width: 50%;
+  margin: 0 auto;
+  }
+
 /* main-content */
 
 
