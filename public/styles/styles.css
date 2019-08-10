@@ -24,8 +24,7 @@ body, html {
 /* main-content */
 .logo{
   height: 275px;
-  margin: 2.5% 26%;
-  
+  margin: 2.5% 26%; 
 }
 
 
@@ -34,7 +33,6 @@ body, html {
 .main-stuff { 
   position: relative; 
   top: 25px; 
-  
   width: 90%; 
   height: 825px; 
   color:black;
@@ -53,7 +51,7 @@ body, html {
   text-align: center;
 }
 
-.find-beer-card, .add-beer-card {
+.find-beer-card, .add-beer-card, .article-info {
   margin-top: 15%;
   background-image: url(/images/backgrounds/linedpaper/linedpaper.png);
 } 
@@ -69,6 +67,11 @@ body, html {
     padding: 2.5%;
     margin-bottom: 10%;
     font-size: 18px;
+  }
+
+  .article-info {
+    width: 50%;
+  margin: 0 auto;
   }
 
   .find-input {
