@@ -2,43 +2,88 @@
 
   <div class="container main-stuff">
 
-    <div class="row">
 
-      <div class="col-10 image-div">
-        <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
-      </div>
+    <div class="col-10 image-div">
+      <img src="/images/charlotte-skyline.png" class="logo sticky" alt="Crafty Drafter Logo, Black and White">
+    </div>
 
 
-      <div class="row">
-        <div class="col-md-6">
+    <div class="row row-spacing">
+        <div class="col-6">
           <div class="card find-beer-card">
+          <div class="card-body">
+            <form class="clearfix mb-4" action="POST">
+              <h3 class="card-title">Find a Beer</h3>
+              <div class="form-group">
+                <select id="typeofSearch" class="find-input">
+                  <option value="default">-Select-</option>
+                  <option value="type">Beer Type</option>
+                  <option value="breweryName">Brewery Name</option>
+                </select>
+                <select id="typeSelections" class="find-input" style="display: none">
+                  <option value="Ale">Ale</option>
+                  <option value="Amber Ale">Amber Ale</option>
+                  <option value="Blonde Ale">Blonde Ale</option>
+                  <option value="Bock">Bock</option>
+                  <option value="Brown Ale">Brown Ale</option>
+                  <option value="Cider">Cider</option>
+                  <option value="IPA">IPA</option>
+                  <option value="Lager">Lager</option>
+                  <option value="Pale Ale">Pale Ale</option>
+                  <option value="Pilsner">Pilsner</option>
+                  <option value="Porter">Porter</option>
+                  <option value="Saison">Saison</option>
+                  <option value="Sour">Sour</option>
+                  <option value="Stout">Stout</option>
+                  <option value="Wheat Beer">Wheat Beer</option>
+                </select>
+                <select id="brewerySelections" class="find-input" style="display: none">
+                  <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
+                  <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
+                  <option value="Free Range">Free Range</option>
+                  <option value="Heist">Heist</option>
+                  <option value="Legion Brewing">Legion Brewing</option>
+                  <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
+                  <option value="NoDa">NoDa</option>
+                  <option value="OMB">OMB</option>
+                  <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
+                  <option value="Salud Cerveceria">Salud Cerveceria</option>
+                  <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
+                  <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
+                  <option value="The Unknown Brewing">The Unknown Brewing</option>
+                  <option value="Triple C">Triple C</option>
+                  <option value="Wooden Robot Brewery">Wheat Beer</option>
+                </select>
+                <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
+              </div>
+            </form>
+
+            <div id="searchResults-list" style="display: none">
+                <h3>Results</h3>
+                <ul class="list-group searh-results-partial">
+                  {{!-- eventually search results will go here --}}
+                </ul>
+              </div> 
+
+          </div>
+           </div>
+          </div>
+        {{!-- end of find beer card --}}
+
+        
+
+        <div class="col-md-6">
+          <div class="card add-beer-card">
             <div class="card-body">
-              <form class="clearfix mb-4" action="POST">
-                <h3 class="card-title">Find a Beer</h3>
+              <form id="addBeerForm">
+                <h3 class="card-title">Add to the CLT Craft Beer Collection</h3>
                 <div class="form-group">
-                  <select id="typeofSearch" class="find-input">
-                    <option value="default">-Select-</option>
-                    <option value="type">Beer Type</option>
-                    <option value="breweryName">Brewery Name</option>
-                  </select>
-                  <select id="typeSelections" class="find-input" style="display: none">
-                    <option value="Ale">Ale</option>
-                    <option value="Amber Ale">Amber Ale</option>
-                    <option value="Blonde Ale">Blonde Ale</option>
-                    <option value="Bock">Bock</option>
-                    <option value="Brown Ale">Brown Ale</option>
-                    <option value="Cider">Cider</option>
-                    <option value="IPA">IPA</option>
-                    <option value="Lager">Lager</option>
-                    <option value="Pale Ale">Pale Ale</option>
-                    <option value="Pilsner">Pilsner</option>
-                    <option value="Porter">Porter</option>
-                    <option value="Saison">Saison</option>
-                    <option value="Sour">Sour</option>
-                    <option value="Stout">Stout</option>
-                    <option value="Wheat Beer">Wheat Beer</option>
-                  </select>
-                  <select id="brewerySelections" class="find-input" style="display: none">
+                  <label for="newBeerInfo">Name of Beer</label>
+                  <input type="text" class="form-control" id="newBeer" placeholder="Your new favorite CLT beer!">
+                </div>
+                <div class="form-group">
+                  <label for="newBrewery">Brewery of Origin</label>
+                  <select id="newBrewery">
                     <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
                     <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
                     <option value="Free Range">Free Range</option>
@@ -55,116 +100,88 @@
                     <option value="Triple C">Triple C</option>
                     <option value="Wooden Robot Brewery">Wheat Beer</option>
                   </select>
-                  <button id="searchBtn" class="btn  float-right" disabled="true">Search</button>
                 </div>
+                <div class="form-group">
+                  <label for="newAddy">Address</label>
+                  <input type="text" class="form-control" id="newAddy1" placeholder="Address 1">
+                  <input type="text" class="form-control" id="newAddy2" placeholder="Address 2">
+                  <input type="text" class="form-control" id="newcity" placeholder="City">
+                  <input type="text" class="form-control" id="newState" placeholder="State">
+                  <input type="number" class="form-control" id="newZip" placeholder="Zip">
+                </div>
+                <div class="form-group">
+                  <label for="newType">Type of Beer</label>
+                  <select id="newType">
+                    <option value="Ale">Ale</option>
+                    <option value="Amber Ale">Amber Ale</option>
+                    <option value="Blonde Ale">Blonde Ale</option>
+                    <option value="Bock">Bock</option>
+                    <option value="Brown Ale">Brown Ale</option>
+                    <option value="Cider">Cider</option>
+                    <option value="IPA">IPA</option>
+                    <option value="Lager">Lager</option>
+                    <option value="Pale Ale">Pale Ale</option>
+                    <option value="Pilsner">Pilsner</option>
+                    <option value="Porter">Porter</option>
+                    <option value="Saison">Saison</option>
+                    <option value="Sour">Sour</option>
+                    <option value="Stout">Stout</option>
+                    <option value="Wheat Beer">Wheat Beer</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="newBeerInfo">ABV %</label>
+                  <input type="number" class="form-control" id="newAbv" placeholder="Enter numbers only">
+                </div>
+                <div class="form-group">
+                  <label for="newWhere">Where to Purchase</label>
+                  <select id="newWhere">
+                    <option value="At Brewery">At Brewery</option>
+                    <option value="Local Grocery Stores">Local Grocery Stores</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="newWhen">When is it available for purchase?</label>
+                  <select id="newWhen">
+                    <option value="Year Round">Year Round</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                    <option value="Winter">Winter</option>
+                  </select>
+                </div>
+                <button id="newBeerbtn" class="btn float-right" disabled="true">Add Your Beer</button>
               </form>
 
-              <div class="articleInfo">
-                <h3>Craft Beer News</h3>
-                  {{> articles}}
-              </div>
-
-          </div>
-        </div>
-        </div>
-          <div class="col-md-6">
-            <div class="card add-beer-card">
-              <div class="card-body">
-                <form id="addBeerForm">
-                  <h3 class="card-title">Add to the CLT Craft Beer Collection</h3>
-                  <div class="form-group">
-                    <label for="newBeerInfo">Name of Beer</label>
-                    <input type="text" class="form-control" id="newBeer" placeholder="Your new favorite CLT beer!">
-                  </div>
-                  <div class="form-group">
-                    <label for="newBrewery">Brewery of Origin</label>
-                    <select id="newBrewery">
-                      <option value="Blue Blaze Brewing">Blue Blaze Brewing</option>
-                      <option value="Divine Barrel Brewing">Divine Barrel Brewing</option>
-                      <option value="Free Range">Free Range</option>
-                      <option value="Heist">Heist</option>
-                      <option value="Legion Brewing">Legion Brewing</option>
-                      <option value="Lenny Boy Brewing">Lenny Boy Brewing</option>
-                      <option value="NoDa">NoDa</option>
-                      <option value="OMB">OMB</option>
-                      <option value="Resident Culture Brewing Company">Resident Culture Brewing Company</option>
-                      <option value="Salud Cerveceria">Salud Cerveceria</option>
-                      <option value="Suffolk Punch Brewery">Suffolk Punch Brewery</option>
-                      <option value="Sugar Creek Brewing">Sugar Creek Brewing</option>
-                      <option value="The Unknown Brewing">The Unknown Brewing</option>
-                      <option value="Triple C">Triple C</option>
-                      <option value="Wooden Robot Brewery">Wheat Beer</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="newAddy">Address</label>
-                    <input type="text" class="form-control" id="newAddy1" placeholder="Address 1">
-                    <input type="text" class="form-control" id="newAddy2" placeholder="Address 2">
-                    <input type="text" class="form-control" id="newcity" placeholder="City">
-                    <input type="text" class="form-control" id="newState" placeholder="State">
-                    <input type="number" class="form-control" id="newZip" placeholder="Zip">
-                  </div>
-                  <div class="form-group">
-                    <label for="newType">Type of Beer</label>
-                    <select id="newType">
-                      <option value="Ale">Ale</option>
-                      <option value="Amber Ale">Amber Ale</option>
-                      <option value="Blonde Ale">Blonde Ale</option>
-                      <option value="Bock">Bock</option>
-                      <option value="Brown Ale">Brown Ale</option>
-                      <option value="Cider">Cider</option>
-                      <option value="IPA">IPA</option>
-                      <option value="Lager">Lager</option>
-                      <option value="Pale Ale">Pale Ale</option>
-                      <option value="Pilsner">Pilsner</option>
-                      <option value="Porter">Porter</option>
-                      <option value="Saison">Saison</option>
-                      <option value="Sour">Sour</option>
-                      <option value="Stout">Stout</option>
-                      <option value="Wheat Beer">Wheat Beer</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="newBeerInfo">ABV %</label>
-                    <input type="number" class="form-control" id="newAbv" placeholder="Enter numbers only">
-                  </div>
-                  <div class="form-group">
-                    <label for="newWhere">Where to Purchase</label>
-                    <select id="newWhere">
-                      <option value="At Brewery">At Brewery</option>
-                      <option value="Local Grocery Stores">Local Grocery Stores</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="newWhen">When is it available for purchase?</label>
-                    <select id="newWhen">
-                      <option value="Year Round">Year Round</option>
-                      <option value="Spring">Spring</option>
-                      <option value="Summer">Summer</option>
-                      <option value="Fall">Fall</option>
-                      <option value="Winter">Winter</option>
-                    </select>
-                  </div>
-                  <button id="newBeerbtn" class="btn float-right" disabled="true">Add Your Beer</button>
-                </form>
+            </div> 
+            {{!-- card-body --}}
+          </div> 
+          {{!-- card --}}
+        </div> 
+        {{!-- col closing --}}
 
 
-             
-                <div id="searchResults-list" style="display: none">
-                  <h3>Results</h3>
-                  <ul class="list-group searh-results-partial">
-                    {{!-- eventually search results will go here --}}
-                  </ul>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div> 
+      {{!-- row main --}}
+
+
+<div class="row">
+  <div class="card article-info">
+    <div class="card-body">
+      <div class="articleInfo">
+        <h3>Craft Beer News</h3>
+        {{articles}}
       </div>
     </div>
-
   </div>
 </div>
+
+
+    </div>
+  </div>
+
+
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
 <script src="https://kit.fontawesome.com/f518b1ca36.js"></script>
