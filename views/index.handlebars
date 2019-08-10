@@ -8,7 +8,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row row-spacing">
         <div class="col-6">
           <div class="card find-beer-card">
           <div class="card-body">
@@ -58,14 +58,20 @@
               </div>
             </form>
 
-            <div class="articleInfo">
-              <h3>Craft Beer News</h3>
-              {{articles}}
-            </div>
+            <div id="searchResults-list" style="display: none">
+                <h3>Results</h3>
+                <ul class="list-group searh-results-partial">
+                  {{!-- eventually search results will go here --}}
+                </ul>
+              </div> 
 
           </div>
+           </div>
           </div>
-        </div>
+        {{!-- end of find beer card --}}
+
+        
+
         <div class="col-md-6">
           <div class="card add-beer-card">
             <div class="card-body">
@@ -147,23 +153,35 @@
                 <button id="newBeerbtn" class="btn float-right" disabled="true">Add Your Beer</button>
               </form>
 
+            </div> 
+            {{!-- card-body --}}
+          </div> 
+          {{!-- card --}}
+        </div> 
+        {{!-- col closing --}}
 
 
+      </div> 
+      {{!-- row main --}}
 
-              <div id="searchResults-list" style="display: none">
-                <h3>Results</h3>
-                <ul class="list-group searh-results-partial">
-                  {{!-- eventually search results will go here --}}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+
+<div class="row">
+  <div class="card article-info">
+    <div class="card-body">
+      <div class="articleInfo">
+        <h3>Craft Beer News</h3>
+        {{articles}}
       </div>
     </div>
-
   </div>
 </div>
+
+
+    </div>
+  </div>
+
+
+
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
 <script src="https://kit.fontawesome.com/f518b1ca36.js"></script>
