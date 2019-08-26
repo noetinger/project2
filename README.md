@@ -2,7 +2,7 @@
 This app has two main functions. It allows users to search for local craft beers brewed in the Charlotte area and add new beers to the database for future searches. When users search for the beer they are looking for, the result will display the Brewery's name and address it originates from, the ABV, where they can buy it and when it is available. 
 
 ## CHECK IT OUT HERE 
-https://intense-refuge-69271.herokuapp.com/
+https://floating-tor-12717.herokuapp.com/
 
 ## PROJECT CONTRIBUTORS
 - Jarvis Maness
