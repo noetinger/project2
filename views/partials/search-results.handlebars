@@ -3,8 +3,8 @@
     {{#each beers}}
     {{log this.when}}
         <li data-id="resName" class="list-group-item"><b>Beer Name: </b>{{this.beerName}}</li>
-        <li data-id="resBrewery" class="list-group-item"><b>Brewery Name: </b>{{this.breweryName}}, {{this.addressTwo}}</li>
-        <li data-id="resAddy1" class="list-group-item"><b>Address: </b>{{this.addressOne}}</li>
+        <li data-id="resBrewery" class="list-group-item"><b>Brewery Name: </b>{{this.breweryName}}</li>
+        <li data-id="resAddy1" class="list-group-item"><b>Address: </b>{{this.addressOne}} {{this.addressTwo}}</li>
         {{!-- <li data-id="resAddy2" class="list-group-item">{{this.addressTwo}}</li> --}}
         <li data-id="resCity" class="list-group-item">{{this.city}} {{this.state}}, {{this.zip}}</li>
         {{!-- <li data-id="resState" class="list-group-item">{{this.state}}</li> --}}
