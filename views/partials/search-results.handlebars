@@ -3,15 +3,15 @@
     {{#each beers}}
     {{log this.when}}
         <li data-id="resName" class="list-group-item"><b>Beer Name: </b>{{this.beerName}}</li>
-        <li data-id="resBrewery" class="list-group-item"><b>Brewery Name: </b>{{this.breweryName}}, {{this.addressTwo}}</li>
-        <li data-id="resAddy1" class="list-group-item"><b>Address: </b>{{this.addressOne}}</li>
+        <li data-id="resBrewery" class="list-group-item"><b>Brewery Name: </b>{{this.breweryName}}</li>
+        <li data-id="resAddy1" class="list-group-item"><b>Address: </b>{{this.addressOne}} {{this.addressTwo}}</li>
         {{!-- <li data-id="resAddy2" class="list-group-item">{{this.addressTwo}}</li> --}}
         <li data-id="resCity" class="list-group-item">{{this.city}} {{this.state}}, {{this.zip}}</li>
         {{!-- <li data-id="resState" class="list-group-item">{{this.state}}</li> --}}
         {{!-- <li data-id="resZip" class="list-group-item">{{this.zip}}</li> --}}
-        <li data-id="resType" class="list-group-item"><b>Beer Type: </b>{{this.type}}  <b>ABV: </b>{{this.abv}}</li>
+        <li data-id="resType" class="list-group-item"><b>Beer Type: </b>{{this.type}}  <b>     ABV: </b>{{this.abv}}</li>
         {{!-- <li data-id="resAbv" class="list-group-item">ABV: {{this.abv}}</li> --}}
-        <li data-id="resWhere" class="list-group-item"><b>Availability: </b>{{this.where}} {{this.when}}</li>
+        <li data-id="resWhere" class="list-group-item"><b>Availability: </b>{{this.where}}  {{this.when}}</li>
         {{!-- <li data-id="resWhere" class="list-group-item">When Available: {{this.when}}</li> --}}
         <li></li>
         {{!-- <li data-id="resWhen" class="list-group-item">{{this.zip}}</li> --}}
